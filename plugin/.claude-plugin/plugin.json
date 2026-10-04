@@ -1,0 +1,11 @@
+{
+  "name": "tavimi",
+  "displayName": "Tavimi",
+  "description": "Signaux des agents : la pastille « un agent vous attend » dans l'interface de Tavimi. Demande un serveur MCP Tavimi nommé « tavimi ».",
+  "author": {
+    "name": "Tavimi",
+    "url": "https://tavimi.com"
+  },
+  "homepage": "https://tavimi.com",
+  "repository": "https://github.com/software-family/tavimi-plugins"
+}

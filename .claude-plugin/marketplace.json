@@ -1,0 +1,15 @@
+{
+  "name": "tavimi",
+  "description": "Plugins Claude Code de Tavimi, la mémoire de travail de vos agents IA.",
+  "owner": {
+    "name": "Tavimi",
+    "url": "https://tavimi.com"
+  },
+  "plugins": [
+    {
+      "name": "tavimi",
+      "source": "./plugin",
+      "description": "Prévient Tavimi quand un agent s'arrête pour vous poser une question."
+    }
+  ]
+}
