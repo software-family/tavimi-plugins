@@ -9,7 +9,7 @@
     {
       "name": "tavimi",
       "source": "./plugin",
-      "description": "Prévient Tavimi quand un agent s'arrête pour vous poser une question."
+      "description": "Signaux des agents et skills pour piloter un espace Tavimi : cadrage, questions, tâche suivante, boucle."
     }
   ]
 }
