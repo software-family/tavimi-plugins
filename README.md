@@ -60,3 +60,9 @@ de l'espace, jamais par un agent.
 > espace partagé, une tâche écrite par un autre membre devient une consigne pour cet agent. Ne
 > lancez la boucle que sur un espace dont vous connaissez tous les contributeurs, et relisez
 > chaque pull request : la boucle n'en fusionne aucune.
+
+## Licence
+
+Ce dépôt est distribué sous la [licence Apache 2.0](LICENSE) : vous pouvez l'utiliser, le modifier
+et le redistribuer, y compris commercialement. Toute redistribution, modifiée ou non, doit garder le
+fichier [NOTICE](NOTICE), qui cite **Elie Terrien (Tavimi) — https://tavimi.com**.
