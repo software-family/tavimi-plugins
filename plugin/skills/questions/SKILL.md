@@ -37,6 +37,11 @@ la tâche, devrait inventer pour la terminer. Pistes fréquentes :
 - arbitrages produit ou UX que le code ne peut pas trancher ;
 - contradictions entre la tâche, la spec et le code actuel.
 
+Une tâche qui change un comportement et n'a pas encore de section `## Spec` reçoit d'abord sa
+spec, dans sa description, comme le fait tavimi:tache-suivante (« La spec vit dans la tâche ») :
+texte d'origine gardé sous `## Demande`, puis `## Spec`, et les décisions ouvertes deviennent les
+questions de l'étape 3.
+
 Ce qui se tranche par le code, la spec ou une convention établie n'est **pas** une question :
 note plutôt ta conclusion et sa source avec `add_task_log`, pour que le prochain agent n'ait
 pas à refaire l'enquête. Si une tâche est trop grosse ou en recouvre une autre, c'est aussi une
@@ -70,9 +75,10 @@ sur quoi tu t'appuies.
 
 ## 4. Ne pas franchir la ligne
 
-- Aucune implémentation, aucune modification du dépôt.
-- Ne change pas le statut des tâches et ne réécris pas leur description (`update_task`) :
-  les questions et le journal suffisent, et l'humain garde la main sur le contenu.
+- Aucune implémentation, aucune modification du dépôt, aucune PR.
+- Ne change pas le statut des tâches. Leur description ne se touche que pour y ajouter la
+  `## Spec` (le texte d'origine reste, sous `## Demande`) : pour le reste, les questions et le
+  journal suffisent, et l'humain garde la main sur le contenu.
 - Aucun tool MCP ne répond aux questions, c'est voulu : un agent ne débloque pas sa propre
   boucle. N'essaie pas de contourner.
 

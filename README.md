@@ -47,8 +47,8 @@ Si Tavimi est injoignable, le hook échoue en cinq secondes sans bloquer le term
 | Skill | Ce qu'il fait |
 |---|---|
 | `/tavimi:cadrage` | Mène l'entretien de cadrage avec un dirigeant ou un manager, propose l'organisation (espaces, statuts, postes, catégories, documentations) et la crée après accord. |
-| `/tavimi:questions` | Passe en revue les tâches ouvertes d'un espace et pose, avec `ask_questions`, les questions qui lèvent leurs ambiguïtés avant le code. |
-| `/tavimi:tache-suivante` | Prend une tâche prête et la mène jusqu'à une pull request ouverte, ou pose les questions qui manquent. Ne fusionne jamais. |
+| `/tavimi:questions` | Passe en revue les tâches ouvertes d'un espace, écrit la spec de celles qui changent un comportement dans leur description, et pose avec `ask_questions` les questions qui lèvent leurs ambiguïtés avant le code. |
+| `/tavimi:tache-suivante` | Prend une tâche prête : écrit d'abord sa spec dans la tâche et pose les questions qu'elle soulève, puis, une fois les réponses données, la développe jusqu'à une pull request ouverte. Ne fusionne jamais. |
 | `/tavimi:boucle` | Enchaîne `tache-suivante` sans surveillance, une tâche par tour, jusqu'à ce qu'il n'y ait plus rien à prendre. Demande le plugin `ralph-loop` (`/plugin install ralph-loop@claude-plugins-official`). |
 
 Chacun prend l'identifiant de l'espace (le champ `id` que donne `list_spaces`) ; sans lui, il
