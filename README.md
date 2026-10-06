@@ -50,6 +50,7 @@ Si Tavimi est injoignable, le hook échoue en cinq secondes sans bloquer le term
 | `/tavimi:questions` | Passe en revue les tâches ouvertes d'un espace, écrit la spec de celles qui changent un comportement dans leur description, et pose avec `ask_questions` les questions qui lèvent leurs ambiguïtés avant le code. |
 | `/tavimi:tache-suivante` | Prend une tâche prête : écrit d'abord sa spec dans la tâche et pose les questions qu'elle soulève, puis, une fois les réponses données, la développe jusqu'à une pull request ouverte. Ne fusionne jamais. |
 | `/tavimi:boucle` | Enchaîne `tache-suivante` sans surveillance, une tâche par tour, jusqu'à ce qu'il n'y ait plus rien à prendre. Demande le plugin `ralph-loop` (`/plugin install ralph-loop@claude-plugins-official`). |
+| `/tavimi:chronologie` | Met à jour la chronologie d'un espace (la frise de ce qui a été livré, décidé et appris, semaine par semaine) à partir des notes et des tâches qu'elle n'a pas encore intégrées. Demande que le propriétaire l'ait activée dans Configuration › Chronologie. |
 
 Chacun prend l'identifiant de l'espace (le champ `id` que donne `list_spaces`) ; sans lui, il
 cherche l'espace du dépôt courant. Les réponses aux questions se donnent dans l'onglet Questions
