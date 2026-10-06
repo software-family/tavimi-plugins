@@ -47,7 +47,23 @@ journal pourquoi, et passe à la suivante.
 - `CLAUDE.md` du dépôt, la spec citée par la tâche, les notes liées. Lis ce qui touche la
   tâche, pas tout.
 
-## 3. Débloquer ou avancer
+## 3. Spécifier, débloquer ou avancer
+
+**La spec vit dans la tâche.** Une tâche qui change un comportement (modèle, écran, tool, règle
+visible) se spécifie dans sa description avant tout code ; un correctif, une configuration ou
+de la documentation n'en ont pas besoin.
+
+- **Pas encore de section `## Spec`** : écris-la. Relis la tâche avec `get_task`, garde son texte
+  d'origine sous `## Demande`, puis ajoute `## Spec` : ce qui change, les règles, les cas
+  limites, ce qui reste dehors ; au format des specs du dépôt s'il en tient. Chaque décision que
+  ni les réponses, ni le code, ni les conventions du dépôt ne tranchent devient une **question**
+  (`ask_questions`), jamais une décision prise au nom du propriétaire : la spec dit « voir la
+  question » à cet endroit. `update_task(description=…)` avec la version lue, `add_task_log`
+  « spec écrite, N questions ». S'il y a des questions, termine le tour sans coder ni ouvrir de
+  PR : le tour suivant développera quand l'humain aura répondu. Sans question, poursuis.
+- **Une `## Spec` et des réponses** : intègre les réponses dans la spec (la décision à la place de
+  « voir la question »), par `update_task` sur la version lue, avant de coder. La spec et les
+  réponses font foi.
 
 S'il manque une décision que ni les réponses, ni la spec, ni le code ne tranchent, **ne devine
 pas** : pose-la avec `ask_questions` (options concrètes, `recommended`, une décision par
@@ -61,9 +77,10 @@ Sinon : `update_task(status=<id du statut « en cours »>)` (l'`id` vient de `ta
 
 - Une branche par tâche, depuis la branche principale à jour : `feat/…`, `fix/…`, `refactor/…`.
 - Si le dépôt tient des specs et des plans (par exemple `docs/superpowers/specs/` et
-  `docs/superpowers/plans/`) et que la tâche change un comportement : écris les siens, au format
-  de ceux qui existent. Les réponses aux questions tiennent lieu de validation : n'attends pas
-  d'accord en cours de route, il n'y a personne pour le donner.
+  `docs/superpowers/plans/`) : recopie la `## Spec` de la tâche, réponses intégrées, au format de
+  celles qui existent, et écris le plan, dans la PR de code. Aucune décision nouvelle n'y entre :
+  ce que la spec ne tranchait pas a déjà été posé en question. N'attends pas d'accord en cours de
+  route, il n'y a personne pour le donner. Pas de PR pour une spec seule.
 - Test d'abord, puis le code ; conventions du dépôt (`CLAUDE.md`).
 - Commits au format du dépôt.
 - `git add` des fichiers nommés, jamais `git add -A` ni `git add .` : l'état de la boucle

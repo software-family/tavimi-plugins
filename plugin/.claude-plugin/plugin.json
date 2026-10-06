@@ -1,6 +1,6 @@
 {
   "name": "tavimi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "displayName": "Tavimi",
   "description": "Signaux des agents (la pastille « un agent vous attend » de Tavimi) et skills pour piloter un espace : cadrage, questions, tâche suivante, boucle. Demande un serveur MCP Tavimi nommé « tavimi ».",
   "author": {
