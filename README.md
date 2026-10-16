@@ -5,18 +5,12 @@ documentations, rangées par espace et partagées avec votre équipe.
 
 ## Plugin `tavimi`
 
-Le plugin apporte deux choses : les **signaux des agents** et des **skills** pour piloter un
-espace Tavimi depuis Claude Code. Il se met à jour par le marketplace, comme tout plugin.
-
-### Signaux des agents
-
-Quand un agent Claude Code s'arrête pour vous poser une question ou attend une permission, il
-prévient Tavimi : une pastille « un agent vous attend » s'allume dans l'interface.
+Le plugin apporte des **skills** pour piloter un espace Tavimi depuis Claude Code. Il se met à
+jour par le marketplace, comme tout plugin.
 
 ### Installation
 
-1. Brancher Claude Code sur Tavimi en MCP, **sous le nom `tavimi`** (les hooks du plugin visent ce
-   nom) :
+1. Brancher Claude Code sur Tavimi en MCP, sous le nom `tavimi` :
 
    ```bash
    claude mcp add --transport http tavimi https://app.tavimi.com/mcp
@@ -31,16 +25,10 @@ prévient Tavimi : une pastille « un agent vous attend » s'allume dans l'inter
    /plugin install tavimi@tavimi
    ```
 
-`/hooks` doit alors montrer cinq entrées de type « MCP tool hook ».
-
-### Ce qui est transmis
-
-Les hooks appellent le tool MCP `signal_session` par la connexion OAuth déjà établie : aucun jeton,
-aucune variable d'environnement. Seuls partent l'identifiant de session, le nom de l'évènement, le
-nom de l'outil en attente et le dernier segment du dossier courant. Jamais le contenu du terminal,
-ni la question, ni la commande en attente de permission.
-
-Si Tavimi est injoignable, le hook échoue en cinq secondes sans bloquer le terminal.
+Jusqu'à la version 0.3.0, le plugin installait aussi cinq hooks qui signalaient à Tavimi une
+session en attente d'une question. Ils ont été retirés en 0.4.0 : Tavimi n'affiche plus ces
+signaux. Mettre à jour le plugin depuis `/plugin` les retire ; `/hooks` ne doit plus montrer
+d'entrée « MCP tool hook » du plugin.
 
 ### Skills
 
