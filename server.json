@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.tavimi/tavimi",
+  "title": "Tavimi",
+  "description": "Shared working memory for teams and their AI assistants: notes, tasks, docs and files by space.",
+  "version": "1.0.0",
+  "websiteUrl": "https://tavimi.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://app.tavimi.com/mcp"
+    }
+  ]
+}
