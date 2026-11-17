@@ -1,6 +1,6 @@
 ---
-name: boucle
-description: Lance une boucle Ralph qui enchaîne les tâches prêtes d'un espace Tavimi, une par tour, chacune jusqu'à une PR ouverte (skill tavimi:tache-suivante), et s'arrête quand plus aucune tâche n'est prenable. À utiliser quand l'utilisateur veut « enchaîner les tâches », « lancer la boucle », « faire tourner Ralph sur Tavimi » ou traiter le backlog sans surveillance.
+name: loop
+description: Lance une boucle Ralph qui enchaîne les tâches prêtes d'un espace Tavimi, une par tour, chacune jusqu'à une PR ouverte (skill tavimi:next-task), et s'arrête quand plus aucune tâche n'est prenable. À utiliser quand l'utilisateur veut « enchaîner les tâches », « lancer la boucle », « faire tourner Ralph sur Tavimi » ou traiter le backlog sans surveillance.
 argument-hint: "[identifiant d'espace] [nombre de tours max, 8 par défaut]"
 ---
 
@@ -32,7 +32,7 @@ tour :
 
 ```bash
 SETUP=$(ls -d ~/.claude/plugins/cache/*/ralph-loop/*/scripts/setup-ralph-loop.sh | sort -V | tail -1)
-"$SETUP" "Utilise le skill tavimi:tache-suivante sur l'espace <espace> : une seule tâche dans ce tour, de la lecture jusqu'à la PR ouverte, ou des questions posées si une décision manque. Ne fusionne jamais. Quand aucune tâche n'est prenable, et seulement dans ce cas, écris <promise>PLUS RIEN A PRENDRE</promise>." \
+"$SETUP" "Utilise le skill tavimi:next-task sur l'espace <espace> : une seule tâche dans ce tour, de la lecture jusqu'à la PR ouverte, ou des questions posées si une décision manque. Ne fusionne jamais. Quand aucune tâche n'est prenable, et seulement dans ce cas, écris <promise>PLUS RIEN A PRENDRE</promise>." \
   --completion-promise "PLUS RIEN A PRENDRE" --max-iterations <n>
 ```
 
@@ -40,7 +40,7 @@ Si le script est introuvable, `ralph-loop` n'est pas installé : dis-le, donne l
 d'installation (`/plugin install ralph-loop@claude-plugins-official`) ou la commande
 `/ralph-loop` équivalente à coller, sans rien lancer d'autre.
 
-Puis commence le premier tour tout de suite, en suivant tavimi:tache-suivante.
+Puis commence le premier tour tout de suite, en suivant tavimi:next-task.
 
 ## Ce que l'utilisateur doit savoir (une fois, au lancement)
 

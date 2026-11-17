@@ -38,7 +38,7 @@ la tâche, devrait inventer pour la terminer. Pistes fréquentes :
 - contradictions entre la tâche, la spec et le code actuel.
 
 Une tâche qui change un comportement et n'a pas encore de section `## Spec` reçoit d'abord sa
-spec, dans sa description, comme le fait tavimi:tache-suivante (« La spec vit dans la tâche ») :
+spec, dans sa description, comme le fait tavimi:next-task (« La spec vit dans la tâche ») :
 texte d'origine gardé sous `## Demande`, puis `## Spec`, et les décisions ouvertes deviennent les
 questions de l'étape 3.
 
