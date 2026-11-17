@@ -71,17 +71,22 @@ d'entrée « MCP tool hook » du plugin.
 
 | Skill | Ce qu'il fait |
 |---|---|
-| `/tavimi:cadrage` | Mène l'entretien de cadrage avec un dirigeant ou un manager, propose l'organisation (espaces, statuts, postes, catégories, documentations) et la crée après accord. |
+| `/tavimi:setup` | Mène l'entretien de cadrage avec un dirigeant ou un manager, propose l'organisation (espaces, statuts, postes, catégories, documentations) et la crée après accord. |
 | `/tavimi:questions` | Passe en revue les tâches ouvertes d'un espace, écrit la spec de celles qui changent un comportement dans leur description, et pose avec `ask_questions` les questions qui lèvent leurs ambiguïtés avant le code. |
-| `/tavimi:tache-suivante` | Prend une tâche prête : écrit d'abord sa spec dans la tâche et pose les questions qu'elle soulève, puis, une fois les réponses données, la développe jusqu'à une pull request ouverte. Ne fusionne jamais. |
-| `/tavimi:boucle` | Enchaîne `tache-suivante` sans surveillance, une tâche par tour, jusqu'à ce qu'il n'y ait plus rien à prendre. Demande le plugin `ralph-loop` (`/plugin install ralph-loop@claude-plugins-official`). |
-| `/tavimi:chronologie` | Met à jour la chronologie d'un espace (la frise de ce qui a été livré, décidé et appris, semaine par semaine) à partir des notes et des tâches qu'elle n'a pas encore intégrées. Demande que le propriétaire l'ait activée dans Configuration › Chronologie. |
+| `/tavimi:next-task` | Prend une tâche prête : écrit d'abord sa spec dans la tâche et pose les questions qu'elle soulève, puis, une fois les réponses données, la développe jusqu'à une pull request ouverte. Ne fusionne jamais. |
+| `/tavimi:loop` | Enchaîne `next-task` sans surveillance, une tâche par tour, jusqu'à ce qu'il n'y ait plus rien à prendre. Demande le plugin `ralph-loop` (`/plugin install ralph-loop@claude-plugins-official`). |
+| `/tavimi:timeline` | Met à jour la chronologie d'un espace (la frise de ce qui a été livré, décidé et appris, semaine par semaine) à partir des notes et des tâches qu'elle n'a pas encore intégrées. Demande que le propriétaire l'ait activée dans Configuration › Chronologie. |
+| `/tavimi:files` | Dépose un fichier dans un espace par la bonne voie : `save_file` pour un texte, `create_file_upload` puis `curl` pour un fichier binaire local, sans recopier son base64. |
 
 Chacun prend l'identifiant de l'espace (le champ `id` que donne `list_spaces`) ; sans lui, il
 cherche l'espace du dépôt courant. Les réponses aux questions se donnent dans l'onglet Questions
-de l'espace, jamais par un agent.
+de l'espace, ou en les dictant à votre agent ; jamais un agent ne répond de lui-même.
 
-> **Attention à la boucle.** `tache-suivante` et `boucle` font implémenter par un agent le texte
+Depuis la version 0.5.0, les skills portent des noms anglais : `cadrage` est devenu `setup`,
+`tache-suivante` `next-task`, `boucle` `loop` et `chronologie` `timeline` ; `questions` ne change
+pas. Les anciennes commandes n'existent plus. Leurs consignes restent en français.
+
+> **Attention à la boucle.** `next-task` et `loop` font implémenter par un agent le texte
 > des tâches, jusqu'à pousser une branche et ouvrir une pull request, avec vos droits git. Dans un
 > espace partagé, une tâche écrite par un autre membre devient une consigne pour cet agent. Ne
 > lancez la boucle que sur un espace dont vous connaissez tous les contributeurs, et relisez

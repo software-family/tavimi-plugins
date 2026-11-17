@@ -1,5 +1,5 @@
 ---
-name: cadrage
+name: setup
 description: Mène l'entretien de cadrage avec un chef d'entreprise, un dirigeant d'association ou un manager pour organiser Tavimi chez lui — organisation, espaces, membres et invités, statuts de tâche, postes, catégories de notes, documentations — puis propose le plan et, après accord, crée espaces, statuts, postes, catégories et documentations ; seuls membres et invitations restent à l'interface. À utiliser quand l'utilisateur veut « mettre en place Tavimi », « organiser les espaces », « cadrer », « onboarder une entreprise ou une association », ou préparer un pilote. Ne pas utiliser pour un espace déjà en service (tavimi:questions pour clarifier ses tâches).
 argument-hint: "[nom de la structure] [ce qu'on sait déjà d'elle]"
 ---

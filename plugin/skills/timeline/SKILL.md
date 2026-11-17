@@ -1,5 +1,5 @@
 ---
-name: chronologie
+name: timeline
 description: Met à jour la chronologie d'un espace Tavimi — la frise de ce qui a été livré, décidé et appris, semaine par semaine — à partir des notes et des tâches qu'elle n'a pas encore intégrées. À utiliser quand l'utilisateur veut « mettre à jour la chronologie », « rédiger la frise », « résumer la semaine », ou quand la chronologie annonce des évènements en attente. Ne pas utiliser pour une documentation ordinaire (ce n'est pas une chronologie) ni pour créer la chronologie : seul le propriétaire l'active, dans l'interface.
 argument-hint: "[identifiant d'espace]"
 ---

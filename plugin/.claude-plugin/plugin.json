@@ -1,8 +1,8 @@
 {
   "name": "tavimi",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "displayName": "Tavimi",
-  "description": "Skills pour piloter un espace Tavimi : cadrage, questions, tâche suivante, boucle, chronologie. Demande un serveur MCP Tavimi.",
+  "description": "Skills pour piloter un espace Tavimi : setup, questions, next-task, loop, timeline, files. Demande un serveur MCP Tavimi.",
   "author": {
     "name": "Tavimi",
     "url": "https://tavimi.com"

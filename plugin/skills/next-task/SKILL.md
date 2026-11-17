@@ -1,6 +1,6 @@
 ---
-name: tache-suivante
-description: Prend UNE tâche prête d'un espace Tavimi (sans question en attente) et la mène jusqu'à une PR ouverte, ou la débloque en posant les questions qui manquent. À utiliser quand l'utilisateur dit « prends la tâche suivante », « avance sur le backlog Tavimi », « traite une tâche », ou à chaque tour d'une boucle lancée par tavimi:boucle. Ne fusionne jamais et ne répond jamais aux questions (réservé à l'humain, dans l'interface web).
+name: next-task
+description: Prend UNE tâche prête d'un espace Tavimi (sans question en attente) et la mène jusqu'à une PR ouverte, ou la débloque en posant les questions qui manquent. À utiliser quand l'utilisateur dit « prends la tâche suivante », « avance sur le backlog Tavimi », « traite une tâche », ou à chaque tour d'une boucle lancée par tavimi:loop. Ne fusionne jamais et ne répond jamais aux questions (réservé à l'humain, dans l'interface web).
 argument-hint: "[identifiant d'espace]"
 ---
 
